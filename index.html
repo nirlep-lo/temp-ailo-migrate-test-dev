@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="repaymentWidget"></div>
+    <script>
+      (function () {
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+        });
+        if (params.partnerId) {
+          localStorage.setItem("externalPartnerId", params.partnerId);
+        } else {
+          // SET DEFAULT DRIVE IQ PARTNER(REQUIRED)
+          localStorage.setItem("externalPartnerId", "123123");
+        }
+        // HOST URL
+        localStorage.setItem(
+          "sourceUrl",
+          "https://loanoptions-ai.github.io/ailo-portal-widget-demo",
+        );
+        localStorage.setItem("source", "Ailo Portal demo");
+        localStorage.setItem("countryCode", "AU");
+      })();
+    </script>
+    <script src="https://loanoptions-widget.s3.ap-southeast-2.amazonaws.com/v2/dev/js/main.js"></script>
+    <link
+      href="https://loanoptions-widget.s3.ap-southeast-2.amazonaws.com/v2/dev/css/main.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>
