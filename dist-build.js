@@ -1,6 +1,6 @@
 (function () {
   const O = {
-    BASE_URL: "https://dev.ailo-embed.loanoptions.ai",
+    BASE_URL: "https://ailo-embed.loanoptions.ai",
     EXTERNAL_PARTNER_ID: 1960,
     SOURCE: "loanoptions",
     SOURCEURL: "https://loanoptions.ai",
